@@ -18,8 +18,8 @@ int16_t read_analog(i2c_master_dev_handle_t i2c_dev_handle, int16_t timeout){ //
         }
         else if(maxtime == timeout * 40){ //time out condition
             break; //break the loop
-            return NULL;    //returning NULL
-        };
+            return 0;    //returning Zero
+        }
         else{
             maxtime++; //increasing the maxtime variable in case we got Not-Done state
             vTaskDelay(pdMS_TO_TICKS(20)); //a delay of 20 ms
